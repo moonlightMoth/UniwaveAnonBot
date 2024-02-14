@@ -5,22 +5,42 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class Secret {
+
+    private static String BOT_TOKEN = "";
+    private static String BOT_USERNAME = "";
+
     public Secret() {
     }
 
     public static String getUniwaveAnonBotToken() {
-        Properties properties;
-        try {
-            properties = new Properties();
-            properties.load(new FileInputStream("src/main/resources/secret.properties"));
-        } catch (IOException var2) {
-            throw new RuntimeException(var2);
+        if (BOT_TOKEN.isEmpty())
+        {
+            Properties properties;
+            try {
+                properties = new Properties();
+                properties.load(new FileInputStream("SECRET"));
+                BOT_TOKEN = properties.getProperty("BOT_TOKEN");
+            } catch (IOException var2) {
+                throw new RuntimeException(var2);
+            }
         }
 
-        return properties.getProperty("BOT_TOKEN");
+        return BOT_TOKEN;
     }
 
     public static String getUniwaveAnonBotUsername() {
-        return "uniwave_anon_bot";
+        if (BOT_USERNAME.isEmpty())
+        {
+            Properties properties;
+            try {
+                properties = new Properties();
+                properties.load(new FileInputStream("SECRET"));
+                BOT_USERNAME = properties.getProperty("BOT_USERNAME");
+            } catch (IOException var2) {
+                throw new RuntimeException(var2);
+            }
+        }
+
+        return BOT_USERNAME;
     }
 }
