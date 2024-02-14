@@ -6,7 +6,9 @@ This bot allows sending private messages to any group it is registered in.
 Currently bot has security and persistence issues. Do not use for production.
 Persistence of user data and other improvements will be added in future updates.
 
-## How To 
+
+## How To
+
 
 ### Prerequisites
 
@@ -19,28 +21,24 @@ Persistence of user data and other improvements will be added in future updates.
 ```
 git clone https://github.com/moonlightmoth/UniwaveAnonBot
 cd UniwaveAnonBot
-```
-Next you need to edit `{project_dir}/src/main/java/bot/Secret.java`. Method `getUniwaveAnonBotToken()` should return token in plain text. This is temporary decision and you are free to provide token any way you like.
-An example of `Secret.java` with token in plain text:
-```
-public class Secret {
-    public Secret() {
-    }
-
-    public static String getUniwaveAnonBotToken() {
-        return "12124:asdsdlkvneijfneuirnvoiuer"; //Your bot token given by BotFather
-    }
-
-    public static String getUniwaveAnonBotUsername() {
-        return "bot_username"; //Your bot username
-    }
-}
-```
-
-Next you compile and build it.
-```
 mvn clean compile assembly:single
 ```
+Executable jar will be inside of `target` directory
+
+<b>---------------------!!!IMPORTANT!!!--------------------- <br> <br>
+You need to create SECRET file and place it inside 
+directory containing built jar. 
+It must contain bot token and bot username</b>
+<br><br>
+For example: 
+```
+BOT_TOKEN=8273647236892734:ex_amplesjinvsjidnvjsd
+BOT_USERNAME=your_bot_username
+```
+
+Next you need to edit `{project_dir}/src/main/java/bot/Secret.java`. Method `getUniwaveAnonBotToken()` should return token in plain text. This is temporary decision and you are free to provide token any way you like.
+An example of `Secret.java` with token in plain text:
+
 Executable jar will be inside of `target` directory
 
 ### Run
