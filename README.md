@@ -36,11 +36,6 @@ BOT_TOKEN=8273647236892734:ex_amplesjinvsjidnvjsd
 BOT_USERNAME=your_bot_username
 ```
 
-Next you need to edit `{project_dir}/src/main/java/bot/Secret.java`. Method `getUniwaveAnonBotToken()` should return token in plain text. This is temporary decision and you are free to provide token any way you like.
-An example of `Secret.java` with token in plain text:
-
-Executable jar will be inside of `target` directory
-
 ### Run
 
 Run jar with `java -jar UniwaveAnonBot-{version}.jar`
