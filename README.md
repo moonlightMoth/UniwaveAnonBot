@@ -35,6 +35,20 @@ For example:
 BOT_TOKEN=8273647236892734:ex_amplesjinvsjidnvjsd
 BOT_USERNAME=your_bot_username
 ```
+### Docker
+
+Bot can be built and executed inside docker container. To make it work follow these steps:
+```
+git clone https://github.com/moonlightmoth/UniwaveAnonBot
+cd UniwaveAnonBot
+```
+
+Create`SECRET` file in project root and place your bot token and username there.
+
+```
+docker build . --tag {your_tag}
+docker run {your_tag}
+```
 
 ### Run
 
