@@ -7,16 +7,22 @@ Currently bot has security and persistence issues. Do not use for production.
 Persistence of user data and other improvements will be added in future updates.
 
 
-## How To
+# How To
 
 
-### Prerequisites
+## Prerequisites
 
 * Java 11+ (developed on 11 [temurin](https://adoptium.net/temurin/releases/?version=11))
 * [Maven](https://maven.apache.org/)
 * [Telegram bot token](https://core.telegram.org/bots)
 
-### Build
+<b>OR </b>
+
+* [Docker](https://www.docker.com/)
+
+## Build and run
+
+### Build on host
 
 ```
 git clone https://github.com/moonlightmoth/UniwaveAnonBot
@@ -35,7 +41,14 @@ For example:
 BOT_TOKEN=8273647236892734:ex_amplesjinvsjidnvjsd
 BOT_USERNAME=your_bot_username
 ```
-### Docker
+
+
+### Run on host
+
+Run jar with `java -jar UniwaveAnonBot-{version}.jar`
+
+
+### Build with docker
 
 Bot can be built and executed inside docker container. To make it work follow these steps:
 ```
@@ -47,14 +60,15 @@ Create`SECRET` file in project root and place your bot token and username there.
 
 ```
 docker build . --tag {your_tag}
+```
+
+### Run with docker
+
+```
 docker run {your_tag}
 ```
 
-### Run
-
-Run jar with `java -jar UniwaveAnonBot-{version}.jar`
-
-### Register and usage
+## Registration and usage
 
 To register this bot you need:
 * Add you bot to group
@@ -69,6 +83,8 @@ Then every group member should:
 Now any text message or sticker sent to bot by such user is copied and sent to selected group.
 
 Anyway, bot gives tips on the way you go, so you don't get lost.
+
+# 
 
 ## Contributions
 
