@@ -19,6 +19,7 @@ Persistence of user data and other improvements will be added in future updates.
 <b>OR </b>
 
 * [Docker](https://www.docker.com/)
+* [Telegram bot token](https://core.telegram.org/bots)
 
 ## Build and run
 
