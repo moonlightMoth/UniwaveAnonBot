@@ -1,5 +1,7 @@
 ![GitHub Release](https://img.shields.io/github/v/release/moonlightmoth/UniwaveAnonBot?include_prereleases)
 ![GitHub License](https://img.shields.io/github/license/moonlightmoth/UniwaveAnonBot)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/moonlightmoth/UniwaveAnonBot/docker-image.yml)
+
 
 
 
