@@ -1,3 +1,7 @@
+![GitHub Release](https://img.shields.io/github/v/release/moonlightmoth/UniwaveAnonBot?include_prereleases)
+![GitHub License](https://img.shields.io/github/license/moonlightmoth/UniwaveAnonBot)
+
+
 
 # UniwaveAnonBot
 This bot allows sending private messages to any group it is registered in.
