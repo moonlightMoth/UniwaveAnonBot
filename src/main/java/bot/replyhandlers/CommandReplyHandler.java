@@ -1,6 +1,7 @@
 package bot.replyhandlers;
 
 import database.PersistenceHandler;
+import bot.Secret;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Chat;
 import org.telegram.telegrambots.meta.api.objects.Message;
@@ -26,15 +27,15 @@ public class CommandReplyHandler extends ReplyHandler {
         System.out.println("CommandReplyHandler.handleReply: chatId " + message.getChatId());
 
         if (!message.getChat().getType().equals("private")) {
-            if (message.getText().equals("/register@uniwave_anon_bot")) {
+            if (message.getText().equals("/register@" + Secret.getBotUsername())) {
                 processGroupRegisterReply(message);
 
                 db.getKnownChats().add(message.getChat());
             }
-            if (message.getText().equals("/chat@uniwave_anon_bot")) {
+            if (message.getText().equals("/chat@" + Secret.getBotUsername())) {
                 stub(message);
             }
-            if (message.getText().equals("/clear_chat@uniwave_anon_bot")) {
+            if (message.getText().equals("/clear_chat@" + Secret.getBotUsername())) {
                 stub(message);
             }
         }
@@ -57,7 +58,7 @@ public class CommandReplyHandler extends ReplyHandler {
         sendMessage.setText("Now bot is acknowledged of this chat\n" +
                 "Chat members can set up bot to send their anon messages here\n" +
                 "Proceed to private chat with this bot for further details\n" +
-                "https://t.me/uniwave_anon_bot");
+                "https://t.me/" + Secret.getBotUsername());
 
         sender.execute(sendMessage);
     }

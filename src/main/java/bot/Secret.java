@@ -12,7 +12,7 @@ public class Secret {
     public Secret() {
     }
 
-    public static String getUniwaveAnonBotToken() {
+    public static String getBotToken() {
         if (BOT_TOKEN.isEmpty())
         {
             Properties properties;
@@ -28,7 +28,7 @@ public class Secret {
         return BOT_TOKEN;
     }
 
-    public static String getUniwaveAnonBotUsername() {
+    public static String getBotUsername() {
         if (BOT_USERNAME.isEmpty())
         {
             Properties properties;

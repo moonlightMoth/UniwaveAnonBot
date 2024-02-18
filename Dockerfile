@@ -1,12 +1,17 @@
-FROM maven AS build
+FROM alpine AS build
+RUN apk add maven
 WORKDIR /root/
 COPY . /root/
 RUN mvn clean compile assembly:single
 
-FROM eclipse-temurin
+FROM alpine
 
+RUN apk add openjdk11-jre
 WORKDIR /root/bot
 COPY --from=build /root/target/UniwaveAnonBot*.jar /root/bot/UniwaveAnonBot.jar
 COPY SECRET /root/bot/SECRET
+WORKDIR /root/db
+RUN apk add sqlite
 
-CMD ["java", "-jar", "/root/bot/UniwaveAnonBot.jar"]
+WORKDIR /root/bot
+CMD ["java", "-jar", "UniwaveAnonBot.jar"]
