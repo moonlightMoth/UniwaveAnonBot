@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args) {
         try {
             TelegramBotsApi telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
-            telegramBotsApi.registerBot(new AnonMessagesLongPollingBot(Secret.getUniwaveAnonBotToken()));
+            telegramBotsApi.registerBot(new AnonMessagesLongPollingBot(Secret.getBotToken()));
         } catch (TelegramApiException var2) {
             var2.printStackTrace();
         }

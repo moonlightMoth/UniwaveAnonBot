@@ -52,7 +52,7 @@ public class AnonMessagesLongPollingBot extends TelegramLongPollingBot {
     }
 
     public String getBotUsername() {
-        return Secret.getUniwaveAnonBotUsername();
+        return Secret.getBotUsername();
     }
 
     public void onRegister() {
