@@ -7,11 +7,10 @@ RUN mvn clean compile assembly:single
 FROM alpine
 
 RUN apk add openjdk11-jre
+RUN apk add sqlite
 WORKDIR /root/bot
 COPY --from=build /root/target/UniwaveAnonBot*.jar /root/bot/UniwaveAnonBot.jar
-COPY SECRET /root/bot/SECRET
-WORKDIR /root/db
-RUN apk add sqlite
+COPY secret/SECRET /root/bot/secret/SECRET
+VOLUME /root/bot/db
 
-WORKDIR /root/bot
 CMD ["java", "-jar", "UniwaveAnonBot.jar"]
