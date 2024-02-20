@@ -15,6 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Makeup example SECRET
-      run: echo 'BOT_TOKEN=1445345523:ex_ampleexampleexampleexampleexample' >> SECRET & echo 'BOT_USERNAME=example_bot_username' >> SECRET
+      run: echo 'BOT_TOKEN=1445345523:ex_ampleexampleexampleexampleexample' >> secret/SECRET & echo 'BOT_USERNAME=example_bot_username' >> secret/SECRET
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
