@@ -20,4 +20,4 @@ target
 hs_err_pid*
 replay_pid*
 
-SECRET
+secret/SECRET

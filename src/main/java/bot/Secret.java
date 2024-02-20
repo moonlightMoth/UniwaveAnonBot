@@ -6,6 +6,7 @@ import java.util.Properties;
 
 public class Secret {
 
+    private static final String SECRET_PATH = "secret/SECRET";
     private static String BOT_TOKEN = "";
     private static String BOT_USERNAME = "";
 
@@ -18,7 +19,7 @@ public class Secret {
             Properties properties;
             try {
                 properties = new Properties();
-                properties.load(new FileInputStream("SECRET"));
+                properties.load(new FileInputStream(SECRET_PATH));
                 BOT_TOKEN = properties.getProperty("BOT_TOKEN");
             } catch (IOException var2) {
                 throw new RuntimeException(var2);
@@ -34,7 +35,7 @@ public class Secret {
             Properties properties;
             try {
                 properties = new Properties();
-                properties.load(new FileInputStream("SECRET"));
+                properties.load(new FileInputStream(SECRET_PATH));
                 BOT_USERNAME = properties.getProperty("BOT_USERNAME");
             } catch (IOException var2) {
                 throw new RuntimeException(var2);

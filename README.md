@@ -29,26 +29,32 @@ Persistence of user data and other improvements will be added in future updates.
 
 ## Build and run
 
+### Bot token management
+
+In order to build and use this project you need to create `{project.root}/secret/SECRET` file containing bot token and bot username.
+
+Example SECRET file can be found at `{project.root}/secret/SECRET.example:`
+```
+BOT_TOKEN=8347598273:AajsvnASVNJkAKJVSasvnkjasnvKJSAASVn
+BOT_USERNAME=example_username_bot
+```
+
+
 ### Build on host
 
+* `git clone https://github.com/moonlightmoth/UniwaveAnonBot`
+
+* <a href="#bot-token-management">Create</a> `SECRET`
+
 ```
-git clone https://github.com/moonlightmoth/UniwaveAnonBot
 cd UniwaveAnonBot
 mvn clean compile assembly:single
 ```
+
+
+
+
 Executable jar will be inside of `target` directory
-
-<b>---------------------!!!IMPORTANT!!!--------------------- <br> <br>
-You need to create SECRET file and place it inside 
-directory containing built jar. 
-It must contain bot token and bot username</b>
-<br><br>
-For example: 
-```
-BOT_TOKEN=8273647236892734:ex_amplesjinvsjidnvjsd
-BOT_USERNAME=your_bot_username
-```
-
 
 ### Run on host
 
@@ -63,7 +69,7 @@ git clone https://github.com/moonlightmoth/UniwaveAnonBot
 cd UniwaveAnonBot
 ```
 
-Create`SECRET` file in project root and place your bot token and username there.
+<a href="#bot-token-management">Create</a> `secret/SECRET`
 
 ```
 docker build . --tag {your_tag}
