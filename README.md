@@ -89,6 +89,7 @@ To register this bot you need:
 * Type `/register@{your_bot_username}`
 
 Then every group member should:
+* Type `/enlist@{your_bot_username}` in corresponding chat
 * Proceed to private chat with bot
 * Type `/chat`
 * Select chat to send anon messages to
