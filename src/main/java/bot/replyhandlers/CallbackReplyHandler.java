@@ -26,7 +26,8 @@ public class CallbackReplyHandler extends ReplyHandler {
         incomingChat.setId(Long.parseLong(data[0]));
         incomingChat.setTitle(data[1]);
 
-        db.getAnonMessagesDestinations().put(callbackQuery.getFrom(), incomingChat);
+        db.changeAnonMessagesDirection(callbackQuery.getFrom(), db.getChatById(Long.parseLong(data[0])));
+
 
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(data[2]);

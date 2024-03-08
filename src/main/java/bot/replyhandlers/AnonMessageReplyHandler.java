@@ -23,7 +23,7 @@ public class AnonMessageReplyHandler extends ReplyHandler {
 
         if (update.hasMessage() && update.getMessage().getChat().getType().equals("private"))
         {
-            if (!db.getAnonMessagesDestinations().containsKey(update.getMessage().getFrom()))
+            if (db.getAnonMessageDirection(update.getMessage().getFrom()) == null)
             {
                 SendMessage sendMessage = new SendMessage();
                 sendMessage.setChatId(update.getMessage().getChatId());
@@ -37,7 +37,7 @@ public class AnonMessageReplyHandler extends ReplyHandler {
             if (update.getMessage().hasText())
             {
                 SendMessage sendMessage = new SendMessage();
-                sendMessage.setChatId(db.getAnonMessagesDestinations().get(update.getMessage().getFrom()).getId());
+                sendMessage.setChatId(db.getAnonMessageDirection(update.getMessage().getFrom()).getId());
                 sendMessage.setText(update.getMessage().getText());
 
                 sender.execute(sendMessage);
@@ -45,7 +45,7 @@ public class AnonMessageReplyHandler extends ReplyHandler {
             if (update.getMessage().hasSticker())
             {
                 SendSticker sendSticker = new SendSticker();
-                sendSticker.setChatId(db.getAnonMessagesDestinations().get(update.getMessage().getFrom()).getId());
+                sendSticker.setChatId(db.getAnonMessageDirection(update.getMessage().getFrom()).getId());
                 sendSticker.setSticker(new InputFile(update.getMessage().getSticker().getFileId()));
 
                 sender.execute(sendSticker);
